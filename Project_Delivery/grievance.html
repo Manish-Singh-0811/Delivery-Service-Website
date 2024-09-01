@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance Form - Delivery Co.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Delivery Co. Customer Support</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="grievance.html">Grievance Form</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Grievance Form</h2>
+            <form id="grievanceForm" style="max-width: 600px; margin: 0 auto; padding: 1rem; background-color: #ffffff; border: 1px solid #004d40; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <label for="grievanceName" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Name:</label>
+                <input type="text" id="grievanceName" name="grievanceName" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #004d40; border-radius: 4px; box-sizing: border-box;">
+
+                <label for="grievanceEmail" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email:</label>
+                <input type="email" id="grievanceEmail" name="grievanceEmail" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #004d40; border-radius: 4px; box-sizing: border-box;">
+
+                <label for="grievanceMessage" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Grievance Details:</label>
+                <textarea id="grievanceMessage" name="grievanceMessage" rows="6" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #004d40; border-radius: 4px; box-sizing: border-box;"></textarea>
+
+                <button type="submit" style="background-color: #004d40; color: #ffffff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; cursor: pointer; border-radius: 4px;">Submit Grievance</button>
+            </form>
+            <p id="grievanceSuccessMessage" class="hidden" style="color: #004d40; text-align: center; margin-top: 1rem;">Thank you! Your grievance has been submitted.</p>
+        </section>
+
+        <section class="section">
+            <h3>Frequently Asked Questions</h3>
+            <ul>
+                <li><strong>Q: How do I track my grievance?</strong></li>
+                <li>A: You will receive an email with a tracking number once your grievance is submitted. You can use this number to check the status of your grievance.</li>
+                <li><strong>Q: How long does it take to process a grievance?</strong></li>
+                <li>A: Our team aims to process grievances within 5 business days. You will be notified once your grievance has been reviewed.</li>
+                <li><strong>Q: What if I don’t receive a response?</strong></li>
+                <li>A: If you haven’t received a response within the expected time frame, please contact our support team directly for assistance.</li>
+                <li><strong>Q: Can I update or cancel my grievance?</strong></li>
+                <li>A: If you need to update or cancel your grievance, please contact our support team with your grievance reference number.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Delivery Co. All rights reserved.</p>
+        <p>Follow us on:</p>
+        <ul class="social-media">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.getElementById("grievanceForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const grievanceName = document.getElementById("grievanceName").value;
+            const grievanceEmail = document.getElementById("grievanceEmail").value;
+            const grievanceMessage = document.getElementById("grievanceMessage").value;
+
+            if (grievanceName && grievanceEmail && grievanceMessage) {
+                document.getElementById("grievanceSuccessMessage").classList.remove("hidden");
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>
